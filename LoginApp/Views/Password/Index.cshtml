@@ -1,0 +1,28 @@
+﻿@model string
+
+@{
+    ViewBag.Title = "Password hash generator";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Password </h2>
+
+<form method="post">
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input name="password" id="password" type="password" class="form-control" />  
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Generate hash</button>
+</form>
+
+@if (!string.IsNullOrEmpty(Model))
+{
+    <hr />
+
+    <div class="form-group">
+        <label for="hash">Generated hash</label>
+        <input name="hash" id="hash" class="form-control" value="@Model" />  
+    </div>
+}
+    

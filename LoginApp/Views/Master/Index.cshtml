@@ -1,0 +1,21 @@
+﻿@model IEnumerable<string>
+
+@{
+    ViewBag.Title = "Master User page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Master User page</h2>
+
+<form method="post">
+    <div class="form-group">
+        <select class="form-control" name="username" id="username">
+            @foreach (var username in @Model)
+            {
+                <option value="@username">@username</option>
+            }
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Logout</button>
+</form>
