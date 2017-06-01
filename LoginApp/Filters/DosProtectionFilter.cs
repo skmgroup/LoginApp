@@ -8,7 +8,7 @@ namespace LoginApp.Filters
     public class DosProtectionFilter : IActionFilter
     {
         private const double TimeLimitSeconds = 10;
-        private const int NumberOfRequestsLimit = 10;
+        private const int NumberOfRequestsLimit = 50;
         
         private readonly ConcurrentDictionary<string, ConcurrentBag<DateTime>> _requestsByAddress = new ConcurrentDictionary<string, ConcurrentBag<DateTime>>();
 
